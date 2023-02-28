@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+    app:
+      build: 
+        context: app
+      container_name: go
+      networks:
+        - go-networks
+      volumes:
+        - ./app:/usr/src/go
+      tty: true
+      ports:
+       - "3000:3000"
+
+   
+
+networks:
+  go-networks:
+    driver: bridge
+
